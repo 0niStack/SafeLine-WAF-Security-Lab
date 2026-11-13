@@ -1,0 +1,8 @@
+services:
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: dvwa
+    restart: unless-stopped
+    # Bound to localhost: the only public path should be through SafeLine
+    ports:
+      - "127.0.0.1:${DVWA_PORT:-8081}:80"
